@@ -1,8 +1,8 @@
 <template>
   <div  id="singleEmployeediv">
-    <p>{{ employee.employeeName }}</p>
-    <p>{{ employee.employeeID }}</p>
-    <p>{{ employee.email }}</p>
+    <p id="name">{{ employee.employeeName }}</p>
+    <p id="id">{{ employee.employeeID }}</p>
+    <p id="email">{{ employee.email }}</p>
     <button @click="showDetails" class="details-btn">Show Details</button> 
     <EmployeeDetailsModal :employee=employee v-if="showModal" @close="closeModal" />
   </div>
@@ -43,9 +43,20 @@ export default {
     text-align: center;
     font-family: "Lora", serif;
     font-weight:500;
+    width:95%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+}
+#name{
+  width:20%
+}
+
+#id{
+  width:20%
+}
+#email{
+  width:20%
 }
 .details-btn{
   border: transparent;
@@ -55,5 +66,6 @@ export default {
   background-color:#72A0C1;
   opacity:0.8;
   color:white;
+  
 }
 </style>
